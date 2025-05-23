@@ -1,20 +1,13 @@
-import {
-  Box,
-  Card,
-  Paper,
-  Typography,
-  IconButton,
-  CardContent,
-} from "@mui/material";
 import { useState } from "react";
 import NoteIcon from "@mui/icons-material/Note";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import { Box, Card, Typography, IconButton, CardContent } from "@mui/material";
 
 const contentItems = [
-  "1 : Hart Failure Hypertension",
-  "2 : Remote Monitoring  Disease",
-  "3 : High Acuity,Strghit medicare",
+  "1 : Hart Failure Hypertension, Ischemic,Heart Disease",
+  "2 : Remote Monitoring  Disease management program, CCM",
+  "3 : High Acuity,Strghit medicare Ambultary Health Services",
 ];
 
 const LatestNoteCard = () => {
@@ -34,11 +27,9 @@ const LatestNoteCard = () => {
   return (
     <Card
       sx={{
-        width: "auto",
         borderRadius: 2,
         boxShadow: 3,
         height: 150,
-        mt: 7.5,
       }}
     >
       <Box
@@ -67,7 +58,6 @@ const LatestNoteCard = () => {
         <Box
           sx={{
             display: "flex",
-            width: 260,
           }}
         >
           <IconButton onClick={handlePrev} sx={{ mt: 2.5 }}>
@@ -75,7 +65,9 @@ const LatestNoteCard = () => {
           </IconButton>
 
           <Box flex={1} textAlign="center" mt={3}>
-            <Typography variant="caption">{contentItems[currentIndex]}</Typography>
+            <Typography variant="caption">
+              {contentItems[currentIndex]}
+            </Typography>
           </Box>
 
           <IconButton onClick={handleNext} sx={{ mt: 2.5 }}>

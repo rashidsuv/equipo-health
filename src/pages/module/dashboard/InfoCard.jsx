@@ -7,9 +7,9 @@ const InfoCard = ({ borderColor = "#1976d2", data = {} }) => {
         border: `1px solid ${borderColor}`,
         borderRadius: 2,
         overflow: "hidden",
-        width: 300,
         boxShadow: 2,
         bgcolor: "#f9f9f9",
+        height: "100%",
       }}
     >
       <Box

@@ -6,7 +6,6 @@ const RecentActivityCard = () => {
   return (
     <Card
       sx={{
-        width: "auto",
         borderRadius: 2,
         boxShadow: 3,
         height: 150,

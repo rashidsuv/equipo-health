@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 
 import construction from "../../../assets/images/img-cunstruct-1.svg";
 import constructionBg from "../../../assets/images/img-cunstruct-1-bg.png";
-import constructionbottom from "../../../assets/images/img-cunstruct-1-bottom.svg";
+import constructionbottom from "../../../assets/images/img-cunstruct-1-bottom.svg?url";
 
 export default function Maintanance() {
   return (
@@ -26,11 +26,10 @@ export default function Maintanance() {
         sx={{ minHeight: "100vh", display: "flex", alignItems: "center" }}
       >
         <Grid
-          mt={20}
           container
           spacing={3}
           alignItems="center"
-          justifyContent="start"
+          justifyContent="center"
           sx={{
             py: 2,
             backgroundImage: `url(${constructionbottom})`,
@@ -39,9 +38,9 @@ export default function Maintanance() {
             backgroundPosition: "bottom",
           }}
         >
-          <Grid item md={6}>
-            <Stack spacing={2} justifyContent="start" alignItems="center">
-              <Typography align="center" variant="h1">
+          <Grid item size={{ md: 6 }}>
+            <Stack spacing={2} justifyContent="center" alignItems="center">
+              <Typography align="center" variant="h4">
                 Under Construction
               </Typography>
               <Typography
@@ -57,7 +56,7 @@ export default function Maintanance() {
               </Button>
             </Stack>
           </Grid>
-          <Grid item md={6}>
+          <Grid item size={{ md: 6 }}>
             <Box sx={{ width: { xs: 300, sm: 374 } }}>
               <img
                 src={construction}

@@ -35,7 +35,7 @@ const PatientSubInfoCard = ({ title, children }) => (
       borderRadius: "8px",
       overflow: "hidden",
       textAlign: "center",
-      width: 140,
+      width: "100%",
       p: 0.3,
       minHeight: 95,
     }}
@@ -57,13 +57,22 @@ const PatientSubInfoCard = ({ title, children }) => (
 
 export default function PatientInfoCard() {
   return (
-    <Paper elevation={3} sx={{ p: 3, borderRadius: 2, width: "80%" }}>
+    <Paper elevation={3} sx={{ p: 3, borderRadius: 2 }}>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={10}>
+        <Grid item size={{ md: 12, lg: 8 }}>
           <Box sx={{ display: "flex", alignItems: "flex-start", gap: 2 }}>
             <Avatar
               alt="Patient Avatar"
-              sx={{ width: 100, height: 100 }}
+              sx={{
+                width: 100,
+                height: 100,
+                display: {
+                  xs: "none",
+                  sm: "none",
+                  md: "none",
+                  lg: "block",
+                },
+              }}
               src={avatar1}
             />
             <Box>
@@ -157,8 +166,8 @@ export default function PatientInfoCard() {
                   <ListItemText
                     primary={
                       <>
-                        <strong> Account # :</strong> 14251541825 🌟 MRN: - (EBS
-                        Demo Facility - 35)
+                        <strong> Account # :</strong> 14251541825{" "}
+                        <strong> MRN:</strong> - (EBS Demo Facility - 35)
                       </>
                     }
                   />
@@ -169,7 +178,7 @@ export default function PatientInfoCard() {
 
           {/* patinet sub info cards */}
           <Grid container spacing={1} sx={{ mt: 2.7 }}>
-            <Grid item xs={4}>
+            <Grid item size={{ xs: 12, md: 6, lg: 3 }}>
               <PatientSubInfoCard
                 title="Risk"
                 children={
@@ -189,7 +198,7 @@ export default function PatientInfoCard() {
               />
             </Grid>
 
-            <Grid item xs={4}>
+            <Grid item size={{ xs: 12, md: 6, lg: 3 }}>
               <PatientSubInfoCard
                 title="Care Gaps"
                 children={
@@ -222,7 +231,7 @@ export default function PatientInfoCard() {
               />
             </Grid>
 
-            <Grid item xs={4}>
+            <Grid item size={{ xs: 12, md: 6, lg: 3 }}>
               <PatientSubInfoCard
                 title="ASCVD"
                 children={
@@ -242,7 +251,7 @@ export default function PatientInfoCard() {
               />
             </Grid>
 
-            <Grid item xs={4}>
+            <Grid item size={{ xs: 12, md: 6, lg: 3 }}>
               <PatientSubInfoCard
                 title="SDOH"
                 children={
@@ -265,14 +274,7 @@ export default function PatientInfoCard() {
         </Grid>
 
         {/* patinet right side info  */}
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 1,
-            width: "30%",
-          }}
-        >
+        <Grid item size={{ md: 12, lg: 4 }}>
           <List dense>
             <ListItem>
               <ListItemIcon>
@@ -319,13 +321,10 @@ export default function PatientInfoCard() {
             </ListItem>
           </List>
 
-          <Divider sx={{ my: 0.2 }} />
+          <Divider sx={{ my: 1 }} />
 
-          <Typography variant="h6">Screenings</Typography>
-          <Box display="flex">
-            <ScreeningList />
-          </Box>
-        </Box>
+          <ScreeningList />
+        </Grid>
       </Grid>
     </Paper>
   );

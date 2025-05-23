@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Chip } from "@mui/material";
+import { Box, Chip, Typography } from "@mui/material";
 
 const ScreeningList = () => {
   const screeningList = [
@@ -23,19 +23,22 @@ const ScreeningList = () => {
   };
 
   return (
-    <Box display="flex" flexWrap="wrap" gap={1}>
-      {screeningList.map((label, index) => (
-        <Chip
-          key={index}
-          label={label}
-          size="small"
-          variant={selectedChips.includes(label) ? "filled" : "outlined"}
-          color={selectedChips.includes(label) ? "primary" : "default"}
-          onClick={() => handleToggleChip(label)}
-          sx={{ cursor: "pointer" }}
-        />
-      ))}
-    </Box>
+    <>
+      <Typography variant="h6">Screenings</Typography>
+      <Box display="flex" flexWrap="wrap" gap={1} mt={1}>
+        {screeningList.map((label, index) => (
+          <Chip
+            key={index}
+            label={label}
+            size="small"
+            variant={selectedChips.includes(label) ? "filled" : "outlined"}
+            color={selectedChips.includes(label) ? "primary" : "default"}
+            onClick={() => handleToggleChip(label)}
+            sx={{ cursor: "pointer" }}
+          />
+        ))}
+      </Box>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import InfoCard from "./InfoCard";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import LatestNoteCard from "./LatestNoteCard";
 import SummaryCards from "./RecentActivityCard";
 import PatientInfoCard from "./PatientInfoCard";
@@ -37,19 +37,39 @@ const DashboardComponent = () => {
 
   return (
     <>
-      <Box sx={{ display: "flex" }} gap={2}>
-        <PatientInfoCard />
-        <Box gap={2} flexGrow={1}>
-          <SummaryCards />
-          <LatestNoteCard />
-        </Box>
-      </Box>
-      <Box sx={{ display: "flex", mt: 2 }} gap={2}>
-        <InfoCard borderColor="#1976d2" data={info1} />
-        <InfoCard borderColor="#53a344" data={info2} />
-        <InfoCard borderColor="#f6950e" data={info3} />
-        <InfoCard borderColor="#ef2d2d" data={info4} />
-      </Box>
+      <Grid container spacing={1}>
+        <Grid item size={{ sm: 12, md: 9 }}>
+          <PatientInfoCard />
+        </Grid>
+
+        <Grid item size={{ sm: 12, md: 3 }}>
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="space-between"
+            height="100%"
+            gap={1}
+          >
+            <SummaryCards />
+            <LatestNoteCard />
+          </Box>
+        </Grid>
+      </Grid>
+
+      <Grid container spacing={1} mt={2}>
+        <Grid item size={{ sm: 12, md: 6, lg: 3 }}>
+          <InfoCard borderColor="#1976d2" data={info1} />
+        </Grid>
+        <Grid item size={{ sm: 12, md: 6, lg: 3 }}>
+          <InfoCard borderColor="#53a344" data={info2} />
+        </Grid>
+        <Grid item size={{ sm: 12, md: 6, lg: 3 }}>
+          <InfoCard borderColor="#f6950e" data={info3} />
+        </Grid>
+        <Grid item size={{ sm: 12, md: 6, lg: 3 }}>
+          <InfoCard borderColor="#ef2d2d" data={info4} />
+        </Grid>
+      </Grid>
     </>
   );
 };
